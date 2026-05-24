@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#24243e"/>
+    </linearGradient>
+    <linearGradient id="skinW" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5d0a9"/>
+      <stop offset="100%" stop-color="#e8c49a"/>
+    </linearGradient>
+    <linearGradient id="skinM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8c49a"/>
+      <stop offset="100%" stop-color="#d4a574"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0c29"/>
+    </linearGradient>
+    <linearGradient id="dress" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c0392b"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="700" fill="url(#bg)"/>
+  <!-- Warm family glow background -->
+  <ellipse cx="500" cy="350" rx="420" ry="280" fill="#ff6b6b" opacity="0.04"/>
+  <ellipse cx="500" cy="350" rx="350" ry="220" fill="#ff6b6b" opacity="0.03"/>
+  
+  <!-- Decorative stars -->
+  <g fill="#fff" opacity="0.2">
+    <circle cx="80" cy="50" r="1.5"/><circle cx="920" cy="80" r="1.2"/><circle cx="150" cy="100" r="1"/>
+    <circle cx="850" cy="40" r="1.8"/><circle cx="500" cy="30" r="1"/><circle cx="300" cy="60" r="1.4"/>
+    <circle cx="700" cy="55" r="1.2"/><circle cx="50" cy="130" r="1"/>
+  </g>
+
+  <!-- ======== FAMILY GROUP ======== -->
+  
+  <!-- ===== LEFT: Wife (媳妇) ===== -->
+  <g filter="url(#shadow)">
+    <!-- Dress / body -->
+    <path d="M145 450 Q130 400 125 350 Q120 300 135 260 L205 260 Q220 300 215 350 Q210 400 195 450Z" fill="url(#dress)"/>
+    <path d="M110 450 L130 580 L210 580 L230 450Z" fill="url(#dress)"/>
+    <!-- Collar -->
+    <path d="M155 280 L170 320 L185 280" fill="#8e44ad" opacity="0.6"/>
+    <!-- Head -->
+    <circle cx="170" cy="230" r="28" fill="url(#skinW)"/>
+    <!-- Hair - long, elegant -->
+    <path d="M142 230 Q142 195 170 190 Q198 195 198 230 Q198 210 170 205 Q142 210 142 230Z" fill="#4a3728"/>
+    <path d="M146 225 Q146 200 170 196 Q194 200 194 225" fill="none" stroke="#4a3728" stroke-width="6"/>
+    <!-- Long hair flowing down -->
+    <path d="M140 235 Q135 270 138 320" fill="none" stroke="#4a3728" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M200 235 Q205 270 202 320" fill="none" stroke="#4a3728" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <!-- Face -->
+    <circle cx="162" cy="228" r="2.5" fill="#3d2b1f"/>
+    <circle cx="178" cy="228" r="2.5" fill="#3d2b1f"/>
+    <path d="M165 240 Q170 245 175 240" fill="none" stroke="#c48b6b" stroke-width="1.5"/>
+    <!-- Arm holding child hand -->
+    <path d="M155 320 Q140 350 135 380" fill="none" stroke="url(#skinW)" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== LEFT CHILD (younger son) ===== -->
+  <g filter="url(#shadow)">
+    <circle cx="240" cy="310" r="20" fill="url(#skinW)"/>
+    <path d="M232 330 L232 400 L248 400 L248 330Z" fill="#3498db"/>
+    <circle cx="234" cy="309" r="2" fill="#3d2b1f"/>
+    <circle cx="246" cy="309" r="2" fill="#3d2b1f"/>
+    <path d="M236 316 Q240 320 244 316" fill="none" stroke="#c48b6b" stroke-width="1.2"/>
+    <!-- Hair -->
+    <path d="M225 305 Q225 288 240 284 Q255 288 255 305" fill="none" stroke="#2d1f14" stroke-width="5"/>
+    <!-- Hand to parent -->
+    <path d="M240 360 Q230 370 220 375" fill="none" stroke="url(#skinW)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== CENTER: Wife holding child's hand, standing with Yang Xiaojun ===== -->
+
+  <!-- ===== RIGHT CHILD (older son) ===== -->
+  <g filter="url(#shadow)">
+    <circle cx="530" cy="280" r="24" fill="url(#skinW)"/>
+    <path d="M520 304 L520 390 L540 390 L540 304Z" fill="#2ecc71"/>
+    <circle cx="524" cy="279" r="2.5" fill="#3d2b1f"/>
+    <circle cx="536" cy="279" r="2.5" fill="#3d2b1f"/>
+    <path d="M526 288 Q530 293 534 288" fill="none" stroke="#c48b6b" stroke-width="1.5"/>
+    <!-- Hair -->
+    <path d="M512 274 Q512 252 530 248 Q548 252 548 274" fill="none" stroke="#2d1f14" stroke-width="6"/>
+    <!-- Arm reaching to dad -->
+    <path d="M535 340 Q545 350 555 355" fill="none" stroke="url(#skinW)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== CENTER-RIGHT: Yang Xiaojun (杨小军) ===== -->
+  <g filter="url(#shadow)">
+    <!-- Body - broad shoulders, suit -->
+    <path d="M420 440 Q405 390 400 340 Q395 290 410 250 L560 250 Q575 290 570 340 Q565 390 550 440Z" fill="url(#suit)"/>
+    <path d="M400 440 L420 600 L550 600 L570 440Z" fill="url(#suit)"/>
+    <!-- Tie -->
+    <path d="M478 340 L490 480 L502 340Z" fill="#c0392b"/>
+    <!-- Collar -->
+    <path d="M460 290 L490 340 L520 290" fill="#0f0c29" stroke="#c0392b" stroke-width="1"/>
+    <!-- Broad shoulders -->
+    <path d="M410 260 Q380 290 375 350" fill="none" stroke="url(#suit)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M560 260 Q590 290 595 350" fill="none" stroke="url(#suit)" stroke-width="18" stroke-linecap="round"/>
+    
+    <!-- Head -->
+    <circle cx="490" cy="225" r="35" fill="url(#skinM)"/>
+    <!-- Hair - short, masculine -->
+    <path d="M455 225 Q455 182 490 175 Q525 182 525 225 Q525 202 490 195 Q455 202 455 225Z" fill="#1a1a2e"/>
+    <path d="M459 218 Q459 190 490 183 Q521 190 521 218" fill="none" stroke="#1a1a2e" stroke-width="7"/>
+    <!-- Gray at temples -->
+    <path d="M460 210 Q462 198 475 190" fill="none" stroke="#b0b0b0" stroke-width="2.5" opacity="0.3"/>
+    <path d="M520 210 Q518 198 505 190" fill="none" stroke="#b0b0b0" stroke-width="2.5" opacity="0.3"/>
+    <!-- Strong eyebrows -->
+    <path d="M470 220 Q480 214 490 217" fill="none" stroke="#1a1a2e" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M490 217 Q500 214 510 220" fill="none" stroke="#1a1a2e" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Eyes -->
+    <circle cx="480" cy="227" r="3.5" fill="#1a1a2e"/>
+    <circle cx="500" cy="227" r="3.5" fill="#1a1a2e"/>
+    <circle cx="480" cy="226" r="1.5" fill="#fff" opacity="0.5"/>
+    <circle cx="500" cy="226" r="1.5" fill="#fff" opacity="0.5"/>
+    <!-- Nose -->
+    <path d="M490 232 L490 245" fill="none" stroke="#c48b6b" stroke-width="2"/>
+    <!-- Warm smile -->
+    <path d="M477 252 Q490 262 503 252" fill="none" stroke="#b5734a" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Arm - wrapping around family -->
+    <path d="M420 340 Q395 370 390 400" fill="none" stroke="url(#suit)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M550 340 Q570 360 575 390" fill="none" stroke="url(#suit)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Heart between wife and Yang Xiaojun -->
+  <g filter="url(#glow)">
+    <text x="380" y="330" text-anchor="middle" font-size="28" fill="#ff6b6b" opacity="0.7">❤️</text>
+    <text x="380" y="360" text-anchor="middle" font-size="14" fill="#f0e6d3" opacity="0.5">相伴一生</text>
+  </g>
+
+  <!-- Labels -->
+  <text x="170" y="610" text-anchor="middle" font-size="14" fill="#e8d5b7" opacity="0.8" font-family="sans-serif">媳妇</text>
+  <text x="490" y="620" text-anchor="middle" font-size="16" fill="#e8d5b7" font-family="serif" letter-spacing="4">杨小军</text>
+  <text x="240" y="420" text-anchor="middle" font-size="11" fill="#8892b0" font-family="sans-serif">小儿子</text>
+  <text x="530" y="410" text-anchor="middle" font-size="11" fill="#8892b0" font-family="sans-serif">大儿子</text>
+
+  <!-- Family tagline -->
+  <text x="500" y="670" text-anchor="middle" font-size="18" fill="#e8d5b7" opacity="0.6" font-family="serif" letter-spacing="6">幸 福 一 家</text>
+  
+  <!-- Decorative bottom line -->
+  <line x1="300" y1="680" x2="700" y2="680" stroke="#8e44ad" stroke-width="1" opacity="0.2"/>
+</svg>
