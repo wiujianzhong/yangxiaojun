@@ -1,511 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>杨小军 · 以行动经营家庭与人生</title>
-  <meta name="description" content="杨小军的个人主页 — 家庭、工作、运动、终身学习。用行动书写踏实人生。" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>杨小军｜个人主页</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@200;300;400;500;600&display=swap');
-
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Noto Serif SC','Inter',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
-      background:#080c18;
-      color:#eef3ff;
-      overflow-x:hidden;
-      line-height:1.7
+    :root {
+      --bg: #f5efe4;
+      --paper: rgba(255, 251, 245, 0.78);
+      --ink: #1d1a17;
+      --muted: #6b625c;
+      --accent: #bf4f2f;
+      --accent-soft: #e7b596;
+      --forest: #2d4739;
+      --line: rgba(29, 26, 23, 0.1);
+      --shadow: 0 30px 60px rgba(39, 25, 14, 0.12);
     }
-
-    /* ===== Glass background with subtle noise ===== */
-    body::before{
-      content:'';position:fixed;inset:0;z-index:0;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      color: var(--ink);
       background:
-        radial-gradient(ellipse at 15% 50%,rgba(100,126,234,.10) 0%,transparent 55%),
-        radial-gradient(ellipse at 85% 50%,rgba(118,75,162,.10) 0%,transparent 55%),
-        radial-gradient(ellipse at 50% 0%,rgba(125,211,252,.06) 0%,transparent 40%),
-        radial-gradient(circle at 50% 100%,#050811 0%,#080c18 50%,#0c1125 100%);
-      pointer-events:none
+        radial-gradient(circle at top left, rgba(191,79,47,0.12), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(45,71,57,0.10), transparent 24%),
+        linear-gradient(135deg, #f7f0e7 0%, #f4eadf 50%, #efe6db 100%);
+      min-height: 100vh;
+    }
+    .frame {
+      width: min(1180px, calc(100% - 32px));
+      margin: 18px auto;
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+    }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 28px; border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #f0b48c);
+      display: grid; place-items: center; color: #fff8f2;
+      font-weight: 700; letter-spacing: 0;
+    }
+    .top-note { font-size: 13px; color: var(--muted); }
+
+    .hero {
+      display: grid; grid-template-columns: 1.2fr 0.95fr; gap: 18px; padding: 24px;
+    }
+    .hero-copy { padding: 18px 10px 18px 8px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 9px 14px; border-radius: 999px;
+      background: rgba(191,79,47,0.08); color: var(--accent);
+      font-size: 13px; font-weight: 600;
+    }
+    .eyebrow::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+    }
+    h1 {
+      font-size: 44px; font-weight: 700; line-height: 1.25; margin: 28px 0 16px;
+      letter-spacing: -0.02em; color: var(--ink);
+    }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-desc {
+      font-size: 17px; line-height: 1.75; color: var(--muted); margin-bottom: 28px;
+    }
+    .stat-row {
+      display: flex; gap: 28px; flex-wrap: wrap; padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 26px; font-weight: 700; color: var(--forest); display: block;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    .hero-visual {
+      position: relative; width: 100%; aspect-ratio: 1/1.05; overflow: hidden;
+      border-radius: 20px; background: #e8e1d6;
+    }
+    .hero-visual img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-badge {
+      position: absolute; bottom: 18px; left: 18px;
+      padding: 10px 16px; border-radius: 12px;
+      background: rgba(29,26,23,0.7); color: #f5efe4;
+      font-size: 14px; font-weight: 600;
+      backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* ===== Layout ===== */
-    .wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:20px 24px 80px}
-
-    /* ===== Scroll Indicator ===== */
-    .scroll-indicator{
-      position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:100;
-      display:flex;flex-direction:column;align-items:center;gap:6px;
-      opacity:0;animation:fadeInUp 2s ease 2s forwards;
-      cursor:pointer;transition:opacity .3s
+    section { padding: 32px 28px; }
+    section + section { border-top: 1px solid var(--line); }
+    .sec-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
     }
-    .scroll-indicator:hover{opacity:.8}
-    .scroll-dot{width:6px;height:6px;border-radius:50%;background:#7dd3fc;animation:scrollDot 2s ease infinite}
-    .scroll-dot:nth-child(2){animation-delay:.3s}
-    .scroll-dot:nth-child(3){animation-delay:.6s}
-    @keyframes scrollDot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(6px)}}
-
-    /* ===== Header / Navigation ===== */
-    .header{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:40px;
-      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-      background:rgba(8,12,24,.6);border-radius:16px;padding:14px 24px
+    .sec-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
     }
-    .logo{font-size:18px;font-weight:600;letter-spacing:2px;background:linear-gradient(135deg,#7dd3fc,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .nav{display:flex;gap:32px;list-style:none}
-    .nav a{
-      color:#8892b0;text-decoration:none;font-size:13px;letter-spacing:1px;
-      transition:color .3s;font-family:'Inter',sans-serif;position:relative;
-      padding:4px 0
-    }
-    .nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,#7dd3fc,#c084fc);transition:width .3s;border-radius:2px}
-    .nav a:hover{color:#eef3ff}
-    .nav a:hover::after{width:100%}
-    @media(max-width:640px){.nav{display:none}.header{justify-content:center}}
-
-    /* ===== Hero Section ===== */
-    .hero{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;
-      min-height:85vh;padding:20px 0 40px;position:relative
-    }
-    .hero-content{animation:fadeInUp .8s ease}
-    .badge{
-      display:inline-block;padding:8px 20px;margin-bottom:16px;
-      border:1px solid rgba(255,255,255,.08);border-radius:999px;
-      background:rgba(255,255,255,.04);color:#8892b0;
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-      font-size:12px;letter-spacing:2px;font-family:'Inter',sans-serif
-    }
-    .hero h1{
-      font-size:clamp(36px,6.5vw,72px);line-height:1.08;font-weight:700;
-      margin:0 0 18px;letter-spacing:2px
-    }
-    .hero h1 .highlight{background:linear-gradient(135deg,#7dd3fc,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .hero .lead{
-      font-size:16px;line-height:1.9;color:#8892b0;max-width:580px;
-      font-family:'Inter',sans-serif;font-weight:300
+    h2 {
+      font-size: 20px; font-weight: 700; margin: 0; letter-spacing: 0.02em;
     }
 
-    .hero-visual{position:relative;animation:fadeInRight .8s ease}
-    .hero-visual .image-frame{
-      position:relative;border-radius:24px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(135deg,#1a1a2e,#16213e);
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.4),
-        inset 0 1px 0 rgba(255,255,255,.06);
-      transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s ease;
-      backdrop-filter:blur(8px)
+    .card-stack { display: flex; flex-direction: column; gap: 14px; }
+    .card {
+      background: rgba(255,255,255,0.5); border-radius: 18px;
+      padding: 18px 22px; border: 1px solid var(--line);
+      display: flex; align-items: center; gap: 16px;
+      transition: all 0.3s ease;
     }
-    .hero-visual .image-frame:hover{
-      transform:scale(1.04) translateY(-6px);
-      box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)
+    .card:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(39,25,14,0.08); }
+    .card-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: rgba(191,79,47,0.08); flex-shrink: 0;
+      display: grid; place-items: center; font-size: 20px;
     }
-    .hero-visual img{width:100%;display:block;object-fit:cover;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
-    .hero-visual .image-frame:hover img{transform:scale(1.06)}
-    .hero-photo{height:680px}
-    .hero-visual .label{
-      position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
-      background:rgba(0,0,0,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-      padding:8px 22px;border-radius:999px;
-      font-size:12px;color:#eef3ff;letter-spacing:1px;white-space:nowrap;
-      font-family:'Inter',sans-serif;border:1px solid rgba(255,255,255,.06)
+    .card-body h3 {
+      margin: 0 0 3px; font-size: 16px; font-weight: 600;
+    }
+    .card-body p {
+      margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5;
     }
 
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;gap:40px;min-height:auto}
-      .hero-content{order:2}
-      .hero-visual{order:1}
-      .hero-photo{height:480px}
+    .family-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
     }
+    .fam-card {
+      background: rgba(255,255,255,0.5); border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--line);
+      transition: all 0.3s ease;
+    }
+    .fam-card:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(39,25,14,0.08); }
+    .fam-card img {
+      width: 100%; aspect-ratio: 1.3/1; object-fit: cover; display: block;
+    }
+    .fam-meta { padding: 14px 18px; }
+    .fam-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+    .fam-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .fam-full-card {
+      grid-column: 1 / -1; background: rgba(255,255,255,0.5); border-radius: 20px;
+      overflow: hidden; border: 1px solid var(--line);
+      transition: all 0.3s ease;
+    }
+    .fam-full-card:hover { transform: scale(1.01); box-shadow: 0 8px 20px rgba(39,25,14,0.08); }
+    .fam-full-card img {
+      width: 100%; max-height: 300px; object-fit: cover; display: block;
+    }
+    .fam-full-card .fam-meta { text-align: center; }
 
-    /* ===== Stats Bar ===== */
-    .stats-bar{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-      background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden;
-      margin:30px 0;max-width:100%;
-      border:1px solid rgba(255,255,255,.05)
+    .hobby-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;
     }
-    .stat-item{
-      background:rgba(13,17,23,.6);padding:24px 16px;text-align:center;
-      backdrop-filter:blur(8px);transition:background .3s,transform .3s
+    .hobby-card {
+      background: rgba(255,255,255,0.5); border-radius: 18px; padding: 24px;
+      text-align: center; border: 1px solid var(--line);
+      transition: all 0.3s ease;
     }
-    .stat-item:hover{background:rgba(255,255,255,.05);transform:scale(1.02)}
-    .stat-number{font-size:28px;font-weight:700;background:linear-gradient(135deg,#7dd3fc,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .stat-label{font-size:11px;color:#8892b0;margin-top:4px;letter-spacing:1px;font-family:'Inter',sans-serif}
+    .hobby-card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(39,25,14,0.08); }
+    .hobby-emoji { font-size: 38px; margin-bottom: 10px; }
+    .hobby-card h3 { font-size: 16px; font-weight: 600; margin: 0 0 6px; }
+    .hobby-card p { margin: 0; font-size: 13px; color: var(--muted); }
 
-    /* ===== Section Titles ===== */
-    .section-title{margin:60px 0 24px;font-size:28px;font-weight:600;display:flex;align-items:center;gap:14px;letter-spacing:2px}
-    .section-title .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(125,211,252,.3),transparent)}
-    .section-subtitle{font-size:13px;color:#8892b0;margin:-14px 0 24px;font-family:'Inter',sans-serif;letter-spacing:1px}
-
-    /* ===== Glass Card Grid ===== */
-    .card-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-    .card{
-      grid-column:span 4;
-      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;padding:28px 24px;
-      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-      box-shadow:0 8px 32px rgba(0,0,0,.25);
-      transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s ease,border-color .4s,background .4s
+    footer {
+      padding: 18px 28px; text-align: center;
+      border-top: 1px solid var(--line);
     }
-    .card:hover{
-      transform:scale(1.05) translateY(-8px);
-      box-shadow:0 24px 60px rgba(0,0,0,.35);
-      border-color:rgba(125,211,252,.25);
-      background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03))
-    }
-    .card .icon{font-size:28px;margin-bottom:10px;display:block}
-    .card h3{font-size:20px;font-weight:600;margin:0 0 10px;letter-spacing:1px}
-    .card p,.card li{color:#8892b0;line-height:1.9;font-size:14px;font-family:'Inter',sans-serif;font-weight:300}
-    .card ul{list-style:none;padding:0}
-    .card ul li{padding:6px 0;padding-left:18px;position:relative}
-    .card ul li::before{content:'▸';position:absolute;left:0;color:#7dd3fc;opacity:.6}
+    footer p { margin: 0; font-size: 13px; color: var(--muted); }
 
-    @media(max-width:900px){.card{grid-column:span 12}.stats-bar{grid-template-columns:repeat(2,1fr)}}
-
-    /* ===== Family Section ===== */
-    .family-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
-    .family-member{
-      border-radius:20px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.01));
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-      box-shadow:0 8px 32px rgba(0,0,0,.25);
-      transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; }
+      .frame { width: calc(100% - 16px); margin: 10px auto; border-radius: 20px; }
+      h1 { font-size: 32px; }
+      .family-grid { grid-template-columns: 1fr; }
     }
-    .family-member:hover{
-      transform:scale(1.03) translateY(-5px);
-      box-shadow:0 20px 50px rgba(0,0,0,.4)
-    }
-    .family-member .photo-wrap{overflow:hidden;height:400px;position:relative}
-    .family-member .photo-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
-    .family-member:hover .photo-wrap img{transform:scale(1.08)}
-    .family-member .info{padding:20px 24px;text-align:center;background:rgba(255,255,255,.02)}
-    .family-member .info h3{font-size:20px;font-weight:600;margin-bottom:4px}
-    .family-member .info p{font-size:13px;color:#8892b0;font-family:'Inter',sans-serif}
-    .family-member .info .tag{
-      display:inline-block;margin-top:8px;padding:4px 14px;border-radius:999px;
-      background:rgba(125,211,252,.1);color:#7dd3fc;
-      font-size:11px;letter-spacing:1px;font-family:'Inter',sans-serif;
-      border:1px solid rgba(125,211,252,.15)
-    }
-
-    @media(max-width:640px){.family-grid{grid-template-columns:1fr}.family-member .photo-wrap{height:300px}}
-
-    /* ===== Timeline ===== */
-    .timeline{display:grid;gap:14px}
-    .timeline-item{
-      display:grid;grid-template-columns:80px 1fr;gap:16px;padding:16px 20px;
-      background:rgba(255,255,255,.04);border-left:3px solid #7dd3fc;
-      border-radius:14px;
-      transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .3s
-    }
-    .timeline-item:hover{transform:scale(1.02);background:rgba(125,211,252,.08)}
-    .timeline-item .year{font-size:14px;font-weight:600;color:#7dd3fc;font-family:'Inter',sans-serif}
-    .timeline-item .desc{color:#8892b0;font-size:14px;font-family:'Inter',sans-serif}
-
-    /* ===== Gallery ===== */
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .gallery-item{
-      grid-column:span 4;border-radius:18px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.07);
-      position:relative;
-      box-shadow:0 8px 24px rgba(0,0,0,.2);
-      transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s;
-      cursor:pointer
-    }
-    .gallery-item:hover{
-      transform:scale(1.06) translateY(-8px);
-      box-shadow:0 24px 60px rgba(0,0,0,.45);
-      z-index:10
-    }
-    .gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s}
-    .gallery-item:hover img{transform:scale(1.12)}
-    .gallery-item{height:280px}
-    .gallery-item .gallery-label{
-      position:absolute;bottom:0;left:0;right:0;
-      padding:14px 18px;
-      background:linear-gradient(transparent,rgba(0,0,0,.85));
-      color:#eef3ff;font-size:12px;letter-spacing:1px;
-      font-family:'Inter',sans-serif;opacity:0;
-      transition:opacity .3s
-    }
-    .gallery-item:hover .gallery-label{opacity:1}
-    .gallery-item.span-6{grid-column:span 6}
-    .gallery-item.span-4{grid-column:span 4}
-
-    @media(max-width:900px){.gallery-item,.gallery-item.span-6,.gallery-item.span-4{grid-column:span 12;height:240px}}
-
-    /* ===== Full Family Photo ===== */
-    .family-photo-wrap{
-      border-radius:20px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(135deg,#0f0c29,#302b63);
-      box-shadow:0 20px 60px rgba(0,0,0,.4);
-      transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s;
-      margin-bottom:20px
-    }
-    .family-photo-wrap:hover{
-      transform:scale(1.02) translateY(-4px);
-      box-shadow:0 30px 80px rgba(0,0,0,.5)
-    }
-    .family-photo-wrap img{width:100%;display:block;object-fit:cover;transition:transform .5s}
-    .family-photo-wrap:hover img{transform:scale(1.04)}
-    .family-caption{text-align:center;padding:16px 20px;font-size:13px;color:#8892b0;font-family:'Inter',sans-serif;letter-spacing:2px}
-    .family-caption span{color:#7dd3fc}
-
-    /* ===== Footer ===== */
-    .footer{
-      margin-top:60px;padding-top:30px;
-      border-top:1px solid rgba(255,255,255,.06);
-      text-align:center;color:#556;
-      font-size:13px;font-family:'Inter',sans-serif;letter-spacing:1px
-    }
-    .footer p{margin:4px 0;color:#556}
-    .footer p:first-child{font-size:14px;color:#8892b0;letter-spacing:2px}
-
-    /* ===== Animations ===== */
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes fadeInScale{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
-
-    /* ===== Reveal on scroll ===== */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-
-    @media(max-width:480px){.hero h1{font-size:28px}.stats-bar{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="frame">
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">杨</div>
+      <span>杨小军 · 个人主页</span>
+    </div>
+    <div class="top-note">以热爱，致生活</div>
+  </div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">杨小军</div>
-    <ul class="nav">
-      <li><a href="#family">家庭</a></li>
-      <li><a href="#work">工作</a></li>
-      <li><a href="#life">生活</a></li>
-      <li><a href="#gallery">相册</a></li>
-    </ul>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="top">
-    <div class="hero-content">
-      <div class="badge">✦ 踏实 · 稳重 · 热爱生活</div>
-      <h1>杨小军<br/><span class="highlight">以行动经营</span>家庭与人生</h1>
-      <p class="lead">
-        一位朴实稳重、成熟有力的男性，用责任守护家庭，用热情拥抱生活。
-        采购、社区、工程——每一个岗位都全力以赴。
-        运动、阅读、家人——每一天都认真对待。
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">以热爱 · 致生活</div>
+      <h1>你好，我是<em>杨小军</em></h1>
+      <p class="hero-desc">
+        26年职场生涯，从采购到社区再到工程，一路实干。<br />
+        爱运动，爱学习，爱生活。两个儿子是我的骄傲。
       </p>
-      <div class="stats-bar">
-        <div class="stat-item"><div class="stat-number">20+</div><div class="stat-label">年工作经验</div></div>
-        <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">口幸福之家</div></div>
-        <div class="stat-item"><div class="stat-number">∞</div><div class="stat-label">持续学习</div></div>
-        <div class="stat-item"><div class="stat-number">每日</div><div class="stat-label">运动健身</div></div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-num">26</span>
+          <span class="stat-label">年工作经验</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">个职业方向</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">个儿子</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">热爱不停</span>
+        </div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="image-frame hero-photo">
-        <img src="assets/yangxiaojun-cool.jpg" alt="杨小军·酷帅形象" />
-        <div class="label">✦ 杨小军 · 稳重而有力量</div>
+      <img src="assets/hero.jpg" alt="杨小军" />
+      <div class="hero-badge">杨小军 · 终身学习者</div>
+    </div>
+  </div>
+
+  <!-- 关于我 -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-dot"></div>
+      <h2>关于我</h2>
+    </div>
+    <div class="card-stack">
+      <div class="card">
+        <div class="card-icon">🏪</div>
+        <div class="card-body">
+          <h3>采购 · 社区 · 工程</h3>
+          <p>
+            做过采购，管过社区，干过工程——<br />
+            每一份经历都让我更懂"落地"二字。
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <div class="card-body">
+          <h3>两个好儿子</h3>
+          <p>两个儿子都成家了，有了自己的小日子。最暖心的就是看他们过得幸福。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <div class="card-body">
+          <h3>终身学习</h3>
+          <p>爱看书，爱琢磨新东西。不装老，不怕新——越学越带劲。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAMILY SECTION ===== -->
-  <h2 class="section-title reveal" id="family">
-    <span>👨‍👩‍👧‍👦 幸福家庭</span>
-    <span class="line"></span>
-  </h2>
-  <p class="section-subtitle reveal">用责任守护，用爱经营 —— 一个温暖的四口之家</p>
-
-  <!-- Top row: Wife left, Yang Xiaojun right -->
-  <div class="family-grid reveal">
-    <div class="family-member">
-      <div class="photo-wrap">
-        <img src="assets/family-couple.jpg" alt="媳妇合照" />
-      </div>
-      <div class="info">
-        <h3>👩 媳妇</h3>
-        <p>贤惠温柔，与杨小军相守相伴，共同经营美满家庭</p>
-        <span class="tag">❤️ 相伴一生</span>
-      </div>
+  <!-- 家庭 -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-dot"></div>
+      <h2>我的家庭</h2>
     </div>
-    <div class="family-member">
-      <div class="photo-wrap">
-        <img src="assets/yangxiaojun-portrait.jpg" alt="杨小军本人" style="object-position:center top" />
-      </div>
-      <div class="info">
-        <h3>🧑 杨小军</h3>
-        <p>稳重有力 · 热爱生活 · 两个儿子的父亲 · 家庭的顶梁柱</p>
-        <span class="tag">💪 家庭的脊梁</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Full Family Photo -->
-  <div class="family-photo-wrap reveal">
-    <img src="assets/family-full.jpg" alt="杨小军全家福" style="height:auto;max-height:560px;width:100%" />
-    <div class="family-caption">
-      ✦ <span>幸福一家</span> · 杨小军与媳妇、两个儿子 · 用爱凝聚的家庭 ✦
-    </div>
-  </div>
-
-  <!-- ===== WORK & STORY SECTION ===== -->
-  <h2 class="section-title reveal" id="work">
-    <span>💼 工作经历</span>
-    <span class="line"></span>
-  </h2>
-  <p class="section-subtitle reveal">踏实做事，认真负责 —— 每一个岗位都留下了坚实的脚印</p>
-
-  <div class="card-grid reveal">
-    <div class="card" style="grid-column:span 6">
-      <span class="icon">🏢</span>
-      <h3>职业历程</h3>
-      <div class="timeline">
-        <div class="timeline-item">
-          <span class="year">采购</span>
-          <span class="desc">把控细节、讲究效率，重视成本与品质的平衡。上万次采购谈判铸就火眼金睛。</span>
+    <div class="family-grid">
+      <div class="fam-card">
+        <img src="assets/family-couple.jpg" alt="夫妻合照" />
+        <div class="fam-meta">
+          <div class="fam-name">我和夫人</div>
+          <div class="fam-desc">一路相伴，平淡也甜</div>
         </div>
-        <div class="timeline-item">
-          <span class="year">社区</span>
-          <span class="desc">善于和人打交道，乐于助人，做事接地气。在社区工作中积累深厚人脉。</span>
-        </div>
-        <div class="timeline-item">
-          <span class="year">工程</span>
-          <span class="desc">面对复杂任务有耐心，注重安全与结果。从图纸到落地全程把控。</span>
+      </div>
+      <div class="fam-card">
+        <img src="assets/family-full.jpg" alt="全家福" />
+        <div class="fam-meta">
+          <div class="fam-name">全家福</div>
+          <div class="fam-desc">两个儿子 · 儿媳 · 我们</div>
         </div>
       </div>
     </div>
-    <div class="card" style="grid-column:span 6">
-      <span class="icon">🧭</span>
-      <h3>工作信条</h3>
-      <ul>
-        <li><strong>责任心</strong> — 交到手里的每件事，都要做到最好</li>
-        <li><strong>沟通力</strong> — 善于协调各方资源，解决问题不过夜</li>
-        <li><strong>执行力</strong> — 定下来的目标，不找借口、只找方法</li>
-        <li><strong>持续进步</strong> — 每完成一个项目都复盘总结</li>
-        <li><strong>团队精神</strong> — 尊重每一个合作伙伴</li>
-      </ul>
-    </div>
-  </div>
+  </section>
 
-  <!-- ===== LIFE SECTION ===== -->
-  <h2 class="section-title reveal" id="life">
-    <span>🏃 生活方式</span>
-    <span class="line"></span>
-  </h2>
-  <p class="section-subtitle reveal">身体是革命的本钱，学习是永恒的追求</p>
+  <!-- 爱好 -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-dot"></div>
+      <h2>爱生活 · 爱运动</h2>
+    </div>
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <div class="hobby-emoji">🏊</div>
+        <h3>游泳</h3>
+        <p>每周必游，自由自在，放空大脑</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-emoji">🏃</div>
+        <h3>跑步</h3>
+        <p>清晨五公里，一天精神好</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-emoji">💪</div>
+        <h3>健身</h3>
+        <p>保持力量，保持状态</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-emoji">🧠</div>
+        <h3>爱学习</h3>
+        <p>AI、新工具、互联网——什么都愿意试试</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="card-grid reveal">
-    <div class="card">
-      <span class="icon">🏊</span>
-      <h3>运动健身</h3>
-      <p>每天保持运动习惯，游泳、健身、跑步交替进行。把身体状态和精神状态都调到最佳。相信自律才能自由。</p>
-    </div>
-    <div class="card">
-      <span class="icon">📚</span>
-      <h3>终身学习</h3>
-      <p>持续阅读新知识、学习新技能。这个时代变化很快，只有不断学习才能跟上节奏，让生活常有新鲜感。</p>
-    </div>
-    <div class="card">
-      <span class="icon">🏠</span>
-      <h3>家庭时光</h3>
-      <p>工作再忙也要留时间给家人。陪儿子们运动、和媳妇一起做饭、周末全家出游——家人的笑容是最重要的动力。</p>
-    </div>
-  </div>
-
-  <!-- ===== GALLERY ===== -->
-  <h2 class="section-title reveal" id="gallery">
-    <span>📸 精彩瞬间</span>
-    <span class="line"></span>
-  </h2>
-  <p class="section-subtitle reveal">每一张照片，都是一段故事</p>
-
-  <div class="gallery reveal">
-    <div class="gallery-item span-6">
-      <img src="assets/yangxiaojun-cool.jpg" alt="杨小军·酷帅形象" />
-      <span class="gallery-label">✦ 沉稳酷帅 · 杨小军</span>
-    </div>
-    <div class="gallery-item span-6">
-      <img src="assets/yangxiaojun-sport.jpg" alt="杨小军·运动健身" />
-      <span class="gallery-label">🏊 乘风破浪 · 运动健身</span>
-    </div>
-    <div class="gallery-item span-4">
-      <img src="assets/yangxiaojun-read.jpg" alt="杨小军·阅读学习" />
-      <span class="gallery-label">📚 学无止境 · 终身学习</span>
-    </div>
-    <div class="gallery-item span-4">
-      <img src="assets/yangxiaojun-portrait.jpg" alt="杨小军·硬朗形象" />
-      <span class="gallery-label">🧑 稳重成熟 · 有力量感</span>
-    </div>
-    <div class="gallery-item span-4">
-      <img src="assets/family-couple.jpg" alt="夫妻合照" />
-      <span class="gallery-label">❤️ 相守相伴 · 与媳妇</span>
-    </div>
-    <div class="gallery-item span-6">
-      <img src="assets/family-full.jpg" alt="全家福合照" style="object-position:center 30%" />
-      <span class="gallery-label">👨‍👩‍👧‍👦 幸福四口之家</span>
-    </div>
-    <div class="gallery-item span-6">
-      <img src="assets/hero.jpg" alt="日常记录" />
-      <span class="gallery-label">📸 生活日常</span>
-    </div>
-  </div>
-
-  <!-- ===== QUOTE ===== -->
-  <div class="reveal" style="text-align:center;padding:40px 20px;margin-top:30px">
-    <p style="font-size:22px;color:#8892b0;font-style:italic;letter-spacing:2px;line-height:1.8;font-weight:300">
-      "用行动经营家庭，用汗水浇灌人生。<br>做一个踏实的人，把每一天都过得认真而热烈。"
-    </p>
-    <p style="margin-top:16px;font-size:13px;color:#556;font-family:'Inter',sans-serif;letter-spacing:2px">—— 杨小军 · 人生信条</p>
-  </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer reveal">
-    <p>杨小军 · 个人主页</p>
-    <p style="font-size:11px;color:#334">以真实人物故事为灵感 · 用静态网站记录踏实人生</p>
-    <p style="font-size:11px;color:#222">© 杨小军 · All Rights Reserved</p>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 杨小军 · 以热爱，致生活</p>
   </footer>
-
 </div>
-
-<!-- Scroll Indicator -->
-<div class="scroll-indicator" onclick="window.scrollTo({top:window.innerHeight,behavior:'smooth'})" title="继续阅读">
-  <div class="scroll-dot"></div>
-  <div class="scroll-dot"></div>
-  <div class="scroll-dot"></div>
-</div>
-
-<script>
-  // Scroll reveal animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible')
-        observer.unobserve(entry.target)
-      }
-    })
-  }, {threshold:.1})
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
-
-  // Smooth scroll for nav
-  document.querySelectorAll('.nav a').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault()
-      const id = a.getAttribute('href').slice(1)
-      document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
-    })
-  })
-</script>
 
 </body>
 </html>
