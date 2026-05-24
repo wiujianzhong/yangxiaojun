@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8d5b7"/>
+      <stop offset="100%" stop-color="#f0e6d3"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5d0a9"/>
+      <stop offset="100%" stop-color="#ffe6c7"/>
+    </linearGradient>
+    <radialGradient id="sunset" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff9a56"/>
+      <stop offset="40%" stop-color="#e8634b"/>
+      <stop offset="70%" stop-color="#b43a6b"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </radialGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <!-- Sunset gradient circle -->
+  <circle cx="400" cy="350" r="320" fill="url(#sunset)" opacity="0.3"/>
+  <!-- Decorative stars -->
+  <g fill="#fff" opacity="0.3">
+    <circle cx="120" cy="80" r="1.5"/><circle cx="680" cy="120" r="1"/><circle cx="200" cy="150" r="1.2"/>
+    <circle cx="600" cy="60" r="1.8"/><circle cx="350" cy="40" r="1"/><circle cx="500" cy="95" r="1.4"/>
+    <circle cx="720" cy="200" r="1"/><circle cx="80" cy="220" r="1.5"/>
+  </g>
+  <!-- Heart shape glow -->
+  <path d="M400 620 Q400 560 340 520 Q280 480 280 420 Q280 370 330 350 Q380 330 400 390 Q420 330 470 350 Q520 370 520 420 Q520 480 460 520 Q400 560 400 620Z" 
+        fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.15" filter="url(#softGlow)"/>
+  
+  <!-- Left figure - Wife -->
+  <g filter="url(#shadow)">
+    <!-- Body / dress -->
+    <path d="M240 520 Q230 480 225 440 Q220 400 230 370 L270 370 Q280 400 275 440 Q270 480 260 520Z" fill="url(#glow1)"/>
+    <path d="M210 520 L230 650 L270 650 L290 520Z" fill="url(#glow1)"/>
+    <!-- Head -->
+    <circle cx="250" cy="340" r="30" fill="url(#glow2)"/>
+    <!-- Hair -->
+    <path d="M220 340 Q220 300 250 295 Q280 300 280 340 Q280 320 250 315 Q220 320 220 340Z" fill="#4a3728"/>
+    <path d="M225 335 Q225 310 250 305 Q275 310 275 335" fill="none" stroke="#4a3728" stroke-width="8"/>
+    <!-- Face features -->
+    <circle cx="240" cy="338" r="2.5" fill="#3d2b1f"/>
+    <circle cx="260" cy="338" r="2.5" fill="#3d2b1f"/>
+    <path d="M243 350 Q250 356 257 350" fill="none" stroke="#c48b6b" stroke-width="1.5"/>
+    <!-- Arms - holding baby -->
+    <path d="M230 400 Q210 420 200 460" fill="none" stroke="url(#glow1)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M270 400 Q290 420 300 460" fill="none" stroke="url(#glow1)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Small child figure between them -->
+  <g filter="url(#shadow)">
+    <circle cx="320" cy="440" r="16" fill="url(#glow2)"/>
+    <path d="M312 456 L312 500 L328 500 L328 456Z" fill="url(#glow1)"/>
+    <circle cx="315" cy="439" r="1.5" fill="#3d2b1f"/>
+    <circle cx="325" cy="439" r="1.5" fill="#3d2b1f"/>
+    <path d="M316 446 Q320 450 324 446" fill="none" stroke="#c48b6b" stroke-width="1"/>
+  </g>
+
+  <!-- Right figure - Yang Xiaojun (杨小军) -->
+  <g filter="url(#shadow)">
+    <!-- Body / suit -->
+    <path d="M460 510 Q450 470 445 430 Q440 390 450 360 L510 360 Q520 390 515 430 Q510 470 500 510Z" fill="#2c3e50"/>
+    <path d="M430 510 L450 660 L530 660 L550 510Z" fill="#2c3e50"/>
+    <path d="M480 430 L480 500" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <!-- Collar -->
+    <path d="M460 380 L480 420 L500 380" fill="#1a252f" stroke="#e74c3c" stroke-width="1"/>
+    <!-- Head -->
+    <circle cx="480" cy="330" r="32" fill="url(#glow2)"/>
+    <!-- Short male hair -->
+    <path d="M448 330 Q448 295 480 288 Q512 295 512 330 Q512 310 480 305 Q448 310 448 330Z" fill="#2d1f14"/>
+    <path d="M452 325 Q452 298 480 293 Q508 298 508 325" fill="none" stroke="#2d1f14" stroke-width="6"/>
+    <!-- Eyebrows - masculine -->
+    <path d="M465 322 Q470 318 478 320" fill="none" stroke="#2d1f14" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M482 320 Q490 318 495 322" fill="none" stroke="#2d1f14" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Eyes -->
+    <circle cx="472" cy="330" r="3" fill="#2d1f14"/>
+    <circle cx="488" cy="330" r="3" fill="#2d1f14"/>
+    <!-- Nose -->
+    <path d="M480 334 L480 342" fill="none" stroke="#c48b6b" stroke-width="1.5"/>
+    <!-- Smile -->
+    <path d="M473 349 Q480 356 487 349" fill="none" stroke="#c48b6b" stroke-width="2"/>
+    <!-- Jaw line -->
+    <path d="M455 348 Q480 370 505 348" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+    <!-- Arm - reaching toward family -->
+    <path d="M460 400 Q440 430 435 470" fill="none" stroke="#2c3e50" stroke-width="9" stroke-linecap="round"/>
+    <path d="M505 400 Q520 430 530 460" fill="none" stroke="#2c3e50" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- Connecting hearts between them -->
+  <g filter="url(#softGlow)">
+    <text x="400" y="400" text-anchor="middle" font-size="36" fill="#ff6b6b" opacity="0.6">❤</text>
+    <text x="400" y="370" text-anchor="middle" font-size="18" font-family="sans-serif" fill="#f0e6d3" opacity="0.8">👨‍👩‍👦</text>
+  </g>
+  
+  <!-- Name labels -->
+  <text x="250" y="680" text-anchor="middle" font-size="16" fill="#f0e6d3" opacity="0.9" font-family="sans-serif">媳妇</text>
+  <text x="480" y="680" text-anchor="middle" font-size="16" fill="#f0e6d3" opacity="0.9" font-family="sans-serif">杨小军</text>
+</svg>
